@@ -39,7 +39,9 @@ DEVICE=true
 if [ "$MemTotalStr" != "" ]; then
 MemTotal=${MemTotalStr:16:8}
 if [ $MemTotal -gt 2000000 ]; then
+    if [ [$MemTotal -gt 2000000 ] && [ $MemTotal -ge 3000000 ] ]; then
     DEVICE=false
+    fi
 else
    DEVICE=true
    fi
